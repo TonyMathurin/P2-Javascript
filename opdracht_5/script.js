@@ -10,4 +10,4 @@ console.log("Optellen van getallen (10 + 5):", somGetallen);
 // 3. Probeer de string en het getal bij elkaar op te tellen
 let somTekstEnGetal = tekstGetal + echtGetal;
 console.log("Optellen van string en getal ('20' + 10):", somTekstEnGetal); 
-// Verwacht resultaat: "2010" (JavaScript plakt de tekst en het getal aan elkaar vast!)
+// Verwacht resultaat: "2010" (JavaScript plakt de tekst en het getal aan elkaar vast!)=
