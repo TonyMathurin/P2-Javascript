@@ -1,85 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!DOCTYPE html>
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opdracht 2 - JavaScript Onderzoek</title>
+    <meta name="description" content="Onderzoeksvragen over HTML en JavaScript.">
+    <title>Opdracht 2 - JavaScript-onderzoek</title>
     <style>
-        body {
+        :root {
+            color-scheme: light;
             font-family: Arial, sans-serif;
+            color: #263445;
+            background: #f3f6fa;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.65;
+        }
+
+        main {
             max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-            line-height: 1.6;
-            color: #333;
+            margin: 0 auto;
+            padding: 32px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 28px rgb(25 50 80 / 10%);
         }
-        h1, h2 {
-            color: #0066cc;
+
+        h1,
+        h2 {
+            color: #0759a5;
         }
+
+        h1 {
+            margin-top: 0;
+            line-height: 1.25;
+        }
+
+        h2 {
+            margin-top: 32px;
+        }
+
         .vraag {
-            font-weight: bold;
-            margin-top: 20px;
+            margin: 24px 0 8px;
+            font-weight: 700;
         }
+
         .antwoord {
-            background-color: #f9f9f9;
-            border-left: 4px solid #0066cc;
-            padding: 10px 15px;
-            margin-top: 5px;
+            margin: 0;
+            padding: 14px 16px;
+            background: #f5f9fd;
+            border-left: 4px solid #0874c9;
+            border-radius: 0 6px 6px 0;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 12px;
+            }
+
+            main {
+                padding: 22px 18px;
+            }
         }
     </style>
 </head>
 <body>
+    <main>
+        <h1>Opdracht 2: JavaScript-onderzoek</h1>
+        <p>Hieronder staan de antwoorden op de onderzoeksvragen over HTML en JavaScript.</p>
 
-    <h1>Opdracht 2: JavaScript Onderzoek</h1>
-    <p>Hieronder staan de antwoorden op de onderzoeksvragen over HTML en JavaScript.</p>
+        <section aria-labelledby="vraag-1">
+            <h2 class="vraag" id="vraag-1">1. Wat is het verschil tussen een script-tag in de head en onderaan de HTML?</h2>
+            <p class="antwoord">
+                <strong>In de <code>&lt;head&gt;</code> zonder <code>defer</code>:</strong>
+                de browser pauzeert het verwerken van de HTML terwijl het script wordt opgehaald en uitgevoerd.
+                Daardoor kan de pagina later zichtbaar worden. Als het script HTML-elementen nodig heeft, zijn die
+                mogelijk nog niet aangemaakt.<br>
+                <strong>Onderaan, vlak voor <code>&lt;/body&gt;</code>:</strong>
+                de browser heeft de HTML erboven al verwerkt voordat het script wordt uitgevoerd. Daardoor kan het
+                script die elementen direct gebruiken. Het script zelf wordt op dat moment nog wel opgehaald en uitgevoerd.
+            </p>
+        </section>
 
-    <!-- Vraag 1 -->
-    <div class="vraag">1. Wat is het verschil met de script-tag bovenin in te laden in de &lt;head&gt;-tag t.o.v. onderin inladen aan het einde van je HTML-tag?</div>
-    <div class="antwoord">
-        <strong>In de &lt;head&gt; (bovenin):</strong> De browser stopt tijdelijk met het inladen van de HTML-pagina zodra hij de script-tag tegenkomt om het script te downloaden en uit te voeren. Dit kan de laadtijd vertragen en problemen geven als het script elementen probeert aan te spreken die nog niet zijn ingeladen.<br>
-        <strong>Onderaan (vlak voor &lt;/body&gt;):</strong> De browser leest eerst de hele HTML-pagina in en bouwt de pagina op. Pas als al de HTML er staat, wordt het script geladen. Hierdoor laadt de pagina sneller en weet je zeker dat alle elementen al bestaan.
-    </div>
+        <section aria-labelledby="vraag-2">
+            <h2 class="vraag" id="vraag-2">2. Wat doet het attribuut <code>defer</code> in de script-tag?</h2>
+            <p class="antwoord">
+                Met <code>defer</code> kan de browser een extern script downloaden terwijl de HTML verder wordt verwerkt.
+                Het script wordt uitgevoerd nadat de HTML is verwerkt, en vóór het <code>DOMContentLoaded</code>-event.
+                Meerdere scripts met <code>defer</code> worden uitgevoerd in de volgorde waarin ze in de HTML staan.
+            </p>
+        </section>
 
-    <!-- Vraag 2 -->
-    <div class="vraag">2. Wat doet het attribuut "defer" in de &lt;script&gt;-tag?</div>
-    <div class="antwoord">
-        Het <code>defer</code>-attribuut zorgt ervoor dat je het script veilig in de <code>&lt;head&gt;</code> kunt plaatsen zonder dat de pagina blokkeert. De browser downloadt het script op de achtergrond terwijl de HTML wordt opgebouwd, en voert het script pas uit nadat de volledige HTML-pagina helemaal klaar is.
-    </div>
+        <section aria-labelledby="vraag-3">
+            <h2 class="vraag" id="vraag-3">3. Wat is het verschil tussen HTML en JavaScript?</h2>
+            <p class="antwoord">
+                <strong>HTML</strong> beschrijft de structuur en inhoud van een webpagina, zoals koppen, alinea's en knoppen.<br>
+                <strong>JavaScript</strong> is een programmeertaal waarmee je gedrag en interactiviteit aan een webpagina toevoegt,
+                bijvoorbeeld reageren op klikken of inhoud aanpassen.
+            </p>
+        </section>
 
-    <!-- Vraag 3 -->
-    <div class="vraag">3. Wat is het verschil tussen HTML en JavaScript?</div>
-    <div class="antwoord">
-        <strong>HTML:</strong> Is een opmaaktaal die dient voor de <em>structuur en inhoud</em> van een webpagina (zoals koppen, alinea's en knoppen).<br>
-        <strong>JavaScript:</strong> Is een programmeertaal die zorgt voor de <em>interactiviteit en dynamiek</em> van een webpagina (zoals reageren op klikken, animaties en gegevens aanpassen).
-    </div>
-
-    <!-- Bonus -->
-    <h2>Bonus</h2>
-    <div class="vraag">Wat is het verschil tussen innerHTML en innerText?</div>
-    <div class="antwoord">
-        <strong>innerText:</strong> Richt zich alleen op de zichtbare platte tekst binnen een element en negeert eventuele HTML-tags.<br>
-        <strong>innerHTML:</strong> Kijkt naar de hele HTML-inhoud inclusief tags, waardoor je ook direct nieuwe HTML-elementen kunt toevoegen of uitlezen.
-    </div>
-
-</body>
-</html>
-```[cite: 3]
-
----
-
-### Checklist voor je oplevering:
-1. Maak de map `opdracht_2` aan in je `p2-javascript` map[cite: 3].
-2. Plaats hierin je zojuist gemaakte `index.html`[cite: 3].
-3. Open `index.html` in je browser, controleer of alle vragen er netjes op staan, en maak hier een **screenshot** van[cite: 3].
-4. Sla de screenshot op in dezelfde map `opdracht_2`[cite: 3].
-5. **Commit & Push** je map naar je GitHub-repository en lever de link in[cite: 3]!
+        <section aria-labelledby="bonus">
+            <h2 id="bonus">Bonus</h2>
+            <p class="vraag">Wat is het verschil tussen <code>innerHTML</code> en <code>innerText</code>?</p>
+            <p class="antwoord">
+                <strong><code>innerText</code></strong> leest of wijzigt de zichtbare tekst van een element.<br>
+                <strong><code>innerHTML</code></strong> leest of wijzigt de HTML-inhoud van een element, inclusief eventuele HTML-tags.
+                Gebruik <code>innerHTML</code> voorzichtig met inhoud van onbekende bronnen.
+            </p>
+        </section>
+    </main>
 </body>
 </html>
